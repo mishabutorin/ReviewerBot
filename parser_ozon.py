@@ -69,18 +69,18 @@ class FeedbackParserOZN:
         soup = BeautifulSoup(html_content, 'html.parser')
         logging.info("Получение отзывов из HTML")
         all_reviews = []
-        characteristics = soup.find_all('div', class_='v3o wo1')
+        characteristics = soup.find_all('div', class_='o5v ow3')
 
         for characteristic in characteristics:
-            characteristic_elemets = characteristic.find_all('div', class_='vo4')
+            characteristic_elemets = characteristic.find_all('div', class_='ov6')
             for characteristic_elemet in characteristic_elemets:
-                characteristic = characteristic_elemet.find('div', class_='o4v')
+                characteristic = characteristic_elemet.find('div', class_='v50')
                 if characteristic:
                     characteristic = characteristic.get_text(strip=True)
                 else:
                     characteristic = 'Комментарий'
 
-                text_element = characteristic_elemet.find('span', class_='ov4')
+                text_element = characteristic_elemet.find('span', class_='vo5')
                 if text_element:
                     text = text_element.get_text(strip=True)
                 else:
@@ -96,7 +96,7 @@ class FeedbackParserOZN:
 
         logging.info("Извлечение наименования товара из HTML")
         soup = BeautifulSoup(html_content, 'html.parser')
-        item_name = soup.find('a', class_='ln7')
+        item_name = soup.find('a', class_='nl8')
 
         if item_name:
             name = item_name.get_text(strip=True).split(',')[0]
