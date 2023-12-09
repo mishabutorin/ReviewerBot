@@ -1,0 +1,11 @@
+[user]
+    name = Kuznetsov Konstantin
+    email = kuznetsov.ks@edu.spbstu.ru
+[alias]
+    co = checkout
+    ci = commit
+    st = status
+    br = branch
+    df = diff
+[color]
+    ui = auto
